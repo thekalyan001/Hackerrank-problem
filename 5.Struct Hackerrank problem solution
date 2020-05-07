@@ -1,0 +1,21 @@
+#include<iostream>
+#include<stdlib.h>
+#include<stdio.h>
+using namespace std;
+//structure are by default public
+struct student
+{
+int age;
+string fname;
+string lname;
+int std;
+
+};
+int main()
+{
+  student ob;
+    cin>>ob.age>>ob.fname>>ob.lname>>ob.std;
+   cout<<ob.age<<" "<<ob.fname<<" "<<ob.lname<<" "<<ob.std;
+   return 0;
+
+}
