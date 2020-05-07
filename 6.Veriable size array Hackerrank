@@ -1,0 +1,33 @@
+#include<iostream>
+#include<vector>
+/*Veriable size array in this queation there are number n->number of elemenyt array,q denote numbere of quearies
+for each n there is veriable k wh8ch tells the size of the each i numnber of array
+for each q there are two quaries a,b a->i number  of array  and b->number of index for printing the value */
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int n,q;
+    cin>>n>>q;
+    vector<int>arr[n];    //Creating n number of dynamic array
+    for(int i=0;i<n;i++)
+    {
+        int k;
+        cin>>k;
+         int val_i_j;
+        for(int j=0;j<k;j++)
+        {
+            cin>>val_i_j;
+            arr[i].push_back(val_i_j);
+        }
+    }
+    int a,b;
+    for(int p=0;p<q;p++)
+    {
+        cin>>a>>b;
+        cout<<arr[a][b]<<endl;
+    }
+    return 0;
+
+}
+
