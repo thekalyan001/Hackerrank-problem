@@ -3,10 +3,10 @@ for each n there is veriable k wh8ch tells the size of the each i numnber of arr
 for each q there are two quaries a,b a->i number  of array  and b->number of index for printing the value 
 Sample Input
 
-2 2
+2 2 //numberr of the array aand teh number of the aquaries
 3 1 5 4
 5 1 2 8 9 3
-0 1
+0 1     //each time of quaries two input a,b a-arrr number, b-index number
 1 3
 Sample Output
 
