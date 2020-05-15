@@ -1,0 +1,45 @@
+/*Sample Input
+6
+1 4 6 2 8 9
+2
+2 4
+Sample Output
+3
+1 8 9
+Explanation
+
+The first query is to erase the 2nd element in the vector, which is 4. Then, modifed vector is {1 6 2 8 9}, 
+we want to remove the range of 2~4, which means the 2nd and 3rd elements should be removed.
+Then 6 and 2 in the modified vector are removed and we finally get {1 8 9}
+*/
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main() {
+    int n,q;
+    vector<int>arr;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        cin>>x;
+        arr.push_back(x);
+    }
+
+    int a,b;
+    cin>>q;
+        cin>>a>>b;
+        //cout<<arr[a][b]<<endl;
+        arr.erase(arr.begin()+(q-1));
+        arr.erase(arr.begin()+(a-1),arr.begin()+(b-1));
+    
+cout<<arr.size()<<endl;
+for(size_t u=0;u<arr.size();u++)
+{
+    cout<<arr[u]<<" ";
+}
+    return 0;
+}
