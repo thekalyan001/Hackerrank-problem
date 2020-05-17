@@ -1,0 +1,63 @@
+  /*
+  : Add an element x to the set.
+  : Delete an element x from the set. (If the number  is not present in the set, then do nothing).
+  : If the number x is present in the set, then print "Yes"(without quotes) else print "No"(without quotes).
+  
+  For queries of type 3 print "Yes"(without quotes) if the number x is present in the set and if the number is not present, then print "No"(without quotes).
+Each query of type 3 should be printed in a new line.
+
+Sample Input
+
+8
+1 9
+1 6
+1 10
+1 4
+3 6
+3 14
+2 6
+3 6
+Sample Output
+
+Yes
+No
+No
+*/
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+   int num;
+   cin>>num;
+   set<int>ss;
+   for(int i=0;i<num;i++)
+   {
+int x,y;
+cin>>x>>y;
+switch(x)
+{
+    case 1:
+    ss.insert(y);
+    break;
+    case 2:
+    ss.erase(y);
+    break;
+    case 3:
+    cout<<(ss.find(y)==ss.end()?"No":"Yes")<<endl;
+    break;
+    
+}
+   }
+    return 0;
+}
+
+
+
