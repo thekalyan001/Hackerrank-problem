@@ -1,0 +1,23 @@
+#include <iostream>
+#include <iomanip>
+#include <limits>
+
+using namespace std;
+
+int main() {
+    int i = 4;
+    double d = 4.0;
+    string s = "HackerRank ";
+int a;
+double b;
+string c;
+cin>>a>>b;
+cin.ignore();
+getline(cin,c);
+
+printf("%d\n%.1lf\n",(int(a+b)),(double(a-int(b))));
+cout<<"HackerRank "<<c<<endl;
+//cout<<a+int(b)<<"\n"<<double(a-int(b))<<"\n"<<s<<c;
+
+    return 0;
+}
