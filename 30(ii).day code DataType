@@ -1,0 +1,16 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    double a;//a-mealCost
+    int b;//b-tipPercent
+    int c;//c-taxPercent
+    float tip,tax,total;
+    cin>>a>>b>>c;
+tip=(a*b)/100;
+tax=(a*c)/100;
+total=a+tip+tax;
+cout<<round(total);
+return 0;
+}
