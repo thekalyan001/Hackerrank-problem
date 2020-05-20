@@ -1,0 +1,35 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+ int fun(int start,int end, int arr[] )
+ {
+     int temp;
+     while(start<end)
+       {
+           temp=arr[start];
+           arr[start]=arr[end];
+           arr[end]=temp;
+           start++;
+           end--;
+       }
+       return(temp);
+ }
+int main()
+{
+
+    int n;
+      cin>>n;
+    int a[n];
+  
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+
+    }
+    fun(0,n-1,a);
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+}
