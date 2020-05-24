@@ -1,0 +1,86 @@
+/*
+Sample Input
+
+Heraldo Memelli 8135627
+2
+100 80
+Sample Output
+
+ Name: Memelli, Heraldo
+ ID: 8135627
+ Grade: O
+Explanation
+
+This student had  scores to average:  and . The student's average grade is . An average grade of  corresponds to the letter grade , 
+so our calculate() method should return the character'O'.
+
+*/
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+class Person{
+	protected:
+		string firstName;
+		string lastName;
+		int id;
+	public:
+		Person(string firstName, string lastName, int identification){
+			this->firstName = firstName;
+			this->lastName = lastName;
+			this->id = identification;
+		}
+		void printPerson(){
+			cout<< "Name: "<< lastName << ", "<< firstName <<"\nID: "<< id << "\n"; 
+		}
+	
+};
+
+class Student : public Person
+{
+vector<int>score;
+int sum=0,total=0,sub=0;
+double avg=0.0;
+public:
+   Student(string firstName,string lastName,int id,vector<int>a): Person(firstName,lastName,id)
+{
+this->score=a;
+sub=score.size();
+}
+char calculate()
+{
+    char g;
+for(unsigned int i=0;i<sub;i++)
+{
+sum+=score[i];
+}
+//avg=total/sub;//(score.size());
+total = sum/score.size();
+return ( total > 89 ? 'O' :
+         total > 79 ? 'E' :
+         total > 69 ? 'A' :
+         total > 54 ? 'P' :
+         total > 39 ? 'D' : 'T' );
+}
+};
+
+
+int main() {
+	string firstName;
+  	string lastName;
+	int id;
+  	int numScores;
+	cin >> firstName >> lastName >> id >> numScores;
+  	vector<int> scores;
+  	for(int i = 0; i < numScores; i++){
+	  	int tmpScore;
+	  	cin >> tmpScore;
+		scores.push_back(tmpScore);
+	}
+	Student* s = new Student(firstName, lastName, id, scores);
+	s->printPerson();
+	cout << "Grade: " << s->calculate() << "\n";
+	return 0;
+}
