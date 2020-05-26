@@ -1,0 +1,56 @@
+/* in vector:-
+\Though technically correct. I hope this becomes bad practice.If everybody just declares all their variables auto it will become hard 
+for humans to read and understand (and we head down the road to untyped languages). The use of auto should be reserved for situations where we don't actually care about the type as
+long as it behaves in a manor that we want (for example iterators, we don't actually care what iterator we
+get as long as we can use it like an iterator).
+*/
+
+/*
+3
+sam 99912222
+tom 11122222
+harry 12299933
+sam
+edward
+harry
+Sample Output
+
+sam=99912222
+Not found
+harry=12299933
+*/
+//be aware N is not the maximum amount of queries that can be made. It could give you 5 definitions but send you 10 queries.
+
+#include<bits/stdc++.h>
+#include<map>
+#include<string>
+using namespace std;
+int main()
+{
+    int n;
+   string name;
+   long no;
+   cin>>n;
+   cin.ignore();
+   map<string,long>book;
+   for(int i=0;i<n;i++)
+   {
+       cin>>name;
+       cin>>no;
+       book[name]=no;
+   }
+   while(cin>>name)
+   {
+       if(book.find(name)!=book.end())
+       {
+          cout<<name<<"="<<book.find(name)->second<<endl;
+       }
+       else
+        {
+            cout<<"Not found\n";
+        }
+
+   }
+
+
+}
