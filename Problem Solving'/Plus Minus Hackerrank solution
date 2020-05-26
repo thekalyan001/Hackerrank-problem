@@ -1,0 +1,32 @@
+//Practice > Algorithms > Warmup > Plus Minus#include<iostream>
+#include<stdio.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+    cin>>a[i];
+    }
+    float j=0,k=0,l=0;
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]>0)
+        {
+            j++;
+        }
+        else if(a[i]<0)
+        {
+            k++;
+        }
+        else if(a[i]==0)
+        {
+            l++;
+        }
+      
+    }
+      printf("%.5f\n%.5f\n%.5f\n",float(j/n),float(k/n),float(l/n));
+    return 0;
+}
