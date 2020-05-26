@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+using namespace std;
+void swap(int *xp, int *yp)  
+{  
+    int temp = *xp;  
+    *xp = *yp;  
+    *yp = temp;  
+} 
+int main()
+{
+int n;
+cin>>n;
+int a[n];
+for(int i=0;i<n;i++)
+{
+cin>>a[i];
+}
+int numSwap=0;
+for(int i=0;i<n-1;i++)
+{
+for(int j=0;j<n-i-1;j++)
+{
+    if(a[j]>a[j+1])
+    {
+        swap(&a[j],&a[j+1]);
+        numSwap++;
+    }
+}
+}
+
+cout<<"Array is sorted in "<<numSwap<<" swaps."<<endl;
+cout<<"First Element: "<<a[0]<<endl;
+cout<<"Last Element: "<<a[n-1];
+
+// else
+// {
+// cout<<"Array is sorted in" <<numSwap<<"swaps."<<endl;
+// cout<<"First Element: "<<a[n-1]<<endl;
+// cout<<"Last Element: "<<a[0];
+// }
+return 0;
+
+}
