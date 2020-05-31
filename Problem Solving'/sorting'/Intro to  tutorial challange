@@ -1,3 +1,13 @@
+/*Sample Input 0
+
+4
+6
+1 4 5 7 9 12
+Sample Output 0
+
+1
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
