@@ -1,0 +1,54 @@
+/*Practice > Algorithms > Implementation > Cats and a Mouse
+For example, cat A is at position x=2 and cat B is at y=5 . If mouse c is at position z=4,
+it is 2 units from cat A and 1 unit from cat B. Cat B will catch the mouse.
+
+Sample Input 0
+
+2
+1 2 3
+1 3 2
+Sample Output 0
+
+Cat B
+Mouse C
+*/
+#include <bits/stdc++.h>
+#include<math.h>
+using namespace std;
+
+vector<string> split_string(string);
+
+// Complete the catAndMouse function below.
+string catAndMouse(int x, int y, int z) 
+{
+int a,b;
+a=abs(x-z);
+b=abs(y-z);
+if (a<b)
+{
+    return "Cat A"; 
+} 
+else if (b<a)
+{
+    return "Cat B"; 
+ }
+  else 
+  {
+      return "Mouse C";
+  }
+
+
+}
+int main()
+{
+    int n;
+    cin>>n;
+   int a,b,c;
+   for(int i=0;i<n;i++)
+   {
+cin>>a>>b>>c;
+string print=catAndMouse(a,b,c);
+cout<<print<<"\n";
+   }
+return 0;
+}
