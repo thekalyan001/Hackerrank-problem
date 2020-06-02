@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+string s;
+try
+{
+cin>>s;
+int i = std::stoi(s);
+cout<<i;
+
+}catch(...)
+{
+
+    cout<<"Bad String";
+}
+// float f = std::stof(str);
+
+            // string -> double 
+           // double d = std::stod(str);
+}
