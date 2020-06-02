@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int countWords(string st)
+{
+    int count=1;
+    for(int i=1 ; i < st.length()-1 ; i++)
+    {
+        if(isupper(st[i]))
+        
+            count++;
+        
+    }
+    return count;
+}
+int main()
+{
+    string st;
+    cin>>st;
+ cout<<countWords(st);
+    return 0;
+}
