@@ -1,0 +1,60 @@
+/*Sample Input
+
+2
+acxz
+bcxz
+
+Sample Output
+
+Funny
+Not Funny
+
+Explanation
+You can use r to store the reverse of s
+s=acxz  r=bcxz
+Corresponding ASCII values of characters of the strings: 
+s=[97,99,120,122]  r=[122,120,99,97]
+For both the strings the adjacent difference list is [2, 21, 2] so we print Funny.
+
+Test Case 1: 
+s=bcxz   r=zxcb
+Corresponding ASCII values of characters of the strings: 
+s=[98,99,120,122]  r=[122,120,99,98]
+.The adjacent difference list for string s is [1, 21, 2] and for string r it is [2, 21, 1].
+Since they are not the same we print Not Funny. 
+
+Test Case 0: 
+*/
+
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+
+char s[10000], r[10000];
+    int times;
+    scanf("%d", &times);
+    for (int t = 0; t < times; t++) {
+        scanf("%s", s);
+        int len = strlen(s);
+        for (int i = 0; i < len; i++) {
+            r[i] = s[strlen(s) - i - 1];
+        }
+        int funny = 1;
+        for (int i = 1; i < len; i++) {
+            if (abs(r[i] - r[i-1]) != abs(s[i] - s[i-1])) {
+                printf("Not Funny\n");
+                funny = 0;
+                break;
+            }     
+        }
+        if (funny) {
+            printf("Funny\n");
+        }
+
+    }
+
+    return 0;
+}
