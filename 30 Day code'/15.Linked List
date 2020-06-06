@@ -1,0 +1,80 @@
+/84
+2
+3
+4
+1
+Sample Output
+
+The locked code in your editor prints the ordered data values for each element in your list as a single line of space-separated integers:
+
+2 3 4 1
+
+*/
+
+#include <iostream>
+#include <cstddef>
+using namespace std;	
+class Node
+{
+    public:
+        int data;
+        Node *next;
+        Node(int d){
+            data=d;
+            next=NULL;
+        }
+};
+class Solution{
+    public:
+
+      Node* insert(Node *head,int data)
+      {
+//Complete this function
+static Node *p;
+if(head==NULL){
+ Node *first = (Node*)malloc(sizeof(Node));
+ first->data=data;
+
+ first->next=NULL;
+
+ head=first;
+
+ p=first;   
+}
+
+else{
+
+    Node *list = (Node*)malloc(sizeof(Node));
+    list->data=data;
+    list->next=NULL;
+    p->next=list;
+    p=list;
+
+}
+return head;
+}
+      
+
+      void display(Node *head)
+      {
+          Node *start=head;
+          while(start)
+          {
+              cout<<start->data<<" ";
+              start=start->next;
+          }
+      }
+};
+int main()
+{
+	Node* head=NULL;
+  	Solution mylist;
+    int T,data;
+    cin>>T;
+    while(T-->0){
+        cin>>data;
+        head=mylist.insert(head,data);
+    }	
+	mylist.display(head);
+		
+}
