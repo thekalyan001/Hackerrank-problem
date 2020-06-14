@@ -1,0 +1,54 @@
+/* PracticeC++STL Lower Bound-STL
+
+Sample Input
+
+ 8
+ 1 1 2 2 6 9 9 15
+ 4
+ 1
+ 4
+ 9
+ 15
+Sample Output
+
+ Yes 1
+ No 5
+ Yes 6
+ Yes 8
+ */
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+int main()
+{
+int n;
+cin>>n;
+vector<int>a;
+for(int i=1;i<=n;i++)
+{int k;
+    cin>>k;
+    a.push_back(k);
+}
+int q;
+cin>>q;
+while(q--)
+{int y;
+cin>>y; 
+vector<int>::iterator low=lower_bound(a.begin(),a.end(),y); 
+
+    if(a[low-a.begin()]==y)
+    {
+        cout<<"Yes "<<(low-a.begin()+1)<<endl;
+    }
+    else
+    {
+
+        cout<<"No "<<(low-a.begin()+1)<<endl;
+    } 
+       
+
+}
+return 0;
+}
+
+
