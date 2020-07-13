@@ -1,0 +1,33 @@
+//PracticeInterview Preparation KitSortingMark and Toys
+//link-https://www.hackerrank.com/challenges/mark-and-toys/problem?h_l=interview&isFullScreen=false&playlist_slugs%5B%5D%5B%5D%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D%5B%5D%5B%5D=sorting
+
+Sample Input
+
+7 50
+1 12 5 111 200 1000 10
+Sample Output
+
+4
+Explanation
+
+He can buy only 4 toys at most. These toys have the following prices: 1 12 5 10.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m,count=0;
+    cin>>n>>m;int a[n];{
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    sort(a,a+n);
+    for(int i=0;i<n;i++)
+    {
+     if(a[i]<m){m=m-a[i];count++;}
+    }
+    }
+    cout<<count<<endl;
+    return 0;
+}
