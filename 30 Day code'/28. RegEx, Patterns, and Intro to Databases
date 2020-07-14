@@ -1,0 +1,66 @@
+/*Output Format
+
+Print an alphabetically-ordered list of first names for every user with a gmail account. Each name must be printed on a new line.
+
+Sample Input
+
+6
+riya riya@gmail.com
+julia julia@julia.me
+julia sjulia@gmail.com
+julia julia@gmail.com
+samantha samantha@gmail.com
+tanya tanya@gmail.com
+Sample Output
+
+julia
+julia
+riya
+samantha
+tanya
+*/
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+
+    int N;
+
+    cin >> N;
+
+    regex e(".+@gmail\\.com$");
+
+    vector<string> db;
+
+    for(int a0 = 0; a0 < N; a0++){
+
+        string firstName;
+
+        string emailID;
+
+        cin >> firstName >> emailID;
+
+
+        if(regex_match(emailID,e)){
+
+            db.push_back(firstName);
+
+        }
+
+    }
+
+    sort(db.begin(),db.end()); 
+
+    for(int i = 0;i < db.size();i++) 
+
+        { 
+
+        cout << db[i] << endl; 
+
+    }
+
+    return 0;
+
+}
