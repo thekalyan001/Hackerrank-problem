@@ -1,0 +1,76 @@
+/*Binary Search Tree, is a node-based binary tree data structure which has the following properties:
+The left subtree of a node contains only nodes with keys lesser than the node’s key.
+The right subtree of a node contains only nodes with keys greater than the node’s key.
+The left and right subtree each must also be a binary search tree.
+There must be no duplicate nodes.
+
+Sample Input
+6
+3
+5
+4
+7
+2
+1
+Sample Output
+
+3 2 5 1 4 7
+
+*/
+#include <iostream>
+#include <cstddef>
+#include <queue>
+#include <string>
+#include <cstdlib>
+
+using namespace std;	
+class Node{
+    public:
+        int data;
+        Node *left,*right;
+        Node(int d){
+            data=d;
+            left=right=NULL;
+        }
+};
+class Solution{
+    public:
+  		Node* insert(Node* root, int data){
+            if(root==NULL){
+                return new Node(data);
+            }
+            else{
+                Node* cur;
+                if(data<=root->data){
+                    cur=insert(root->left,data);
+                    root->left=cur;
+                }
+                else{
+                   cur=insert(root->right,data);
+                   root->right=cur;
+                 }           
+           return root;
+           }
+        }
+
+void levelOrder(Node * root){
+    queue<Node *> q;
+    Node* n = root;
+   
+    while(n != NULL){
+        cout << n->data << ' ';
+        
+        if( n->left  != NULL ) q.push(n->left);
+        if( n->right != NULL ) q.push(n->right);
+
+        if( !q.empty() ) {
+            n = q.front();
+            q.pop();
+        } else {
+            n = NULL;
+        }
+    }
+}
+
+
+};//End of Solution
